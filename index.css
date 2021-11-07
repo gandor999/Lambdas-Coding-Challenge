@@ -1,0 +1,40 @@
+#para1 {
+	height: 100px;
+	width: 100px;
+}
+
+#button1 {
+	height: 100px;
+	width: 100px;
+}
+
+#p-1 {
+	height: 100px;
+	width: 100px;
+}
+
+input {
+	width: 100%;
+}
+
+.card {
+  	border: none;	
+  }
+
+@media (min-width: 560px) {
+  .card {
+  	width: 400px;	
+  }
+}
+
+@media (min-width: 985px) {
+  .card {
+  	align-self: center;
+  }
+}
+
+@media (min-width: 558px) {
+  .card {
+  	align-self: center;
+  }
+}
