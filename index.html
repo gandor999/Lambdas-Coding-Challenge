@@ -33,10 +33,8 @@
 			  <div class="card-body">
 			    <h4 class="card-title d-flex justify-content-center">Country Name</h5>
 			    <p class="card-text">Time Zones</p>
-			    <p>Country Code</p>
-			    <p>Calling code</p>
-			    <!-- Button trigger modal -->
-			    <!-- Button trigger modal -->
+			    <p>ISO Code</p>
+			    <p>Calling codes</p>
 			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal">
 			      Details
 			    </button>
@@ -50,7 +48,7 @@
 			    <p class="card-text">Time Zones</p>
 			    <p>Country Code</p>
 			    <p>Calling code</p>
-			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal">
+			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal-2">
 			      Details
 			    </button>
 			  </div>
@@ -87,24 +85,47 @@
 
 
 	<!-- Modal - the script will have to generate a new modal everytime a deials button is clicked since it corresponds to a particualr country. Note: the consttants will have to be outside the loop -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Country Name  <img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body">
-	        Details regarding the country
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	<section id="modal-section">
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Country Name  <img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        Details regarding the country
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Country Name  <img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        Second Modal
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</section>
+	
+
 
 
 	<script type="text/javascript" src="script.js"></script>
