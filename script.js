@@ -14,9 +14,19 @@ let getData = async () => {
 getData();
 
 
-console.log(data);
 
 
+setTimeout(() => {
+	console.log(data);
+}, 1000);
+
+
+// Begin loading cards and images
+
+
+setTimeout(() => {
+	const 
+}, 1000);
 
 
 
