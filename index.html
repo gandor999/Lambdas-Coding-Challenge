@@ -9,16 +9,16 @@
 
     <link rel="stylesheet" type="text/css" href="index.css">
 
-	<title>Unification</title>
+	<title>Countries</title>
 </head>
 <body>
 
-	<header class="container-fluid d-flex flex-column align-items-center justify-content-center">
+	<!-- <header class="container-fluid d-flex flex-column align-items-center justify-content-center">
 		<div id="container1" class="d-flex flex-column">
 			<p id="para1" class="bg-primary d-flex align-items-center justify-content-center">Hello Word</p>
 			<button id="button1" class="bg-primary d-flex align-items-center justify-content-center">Click here</button>
 		</div>
-	</header>
+	</header> -->
 
 	<section id="search-section" class="container-fluid d-flex flex-column align-items-center justify-content-center mt-5">
 		<div>
@@ -29,13 +29,13 @@
 	<section id="content-section" class="container-fluid d-flex justify-content-around justify-content-center mt-5">
 		<div class="row">
 			<div class="card mt-5 col-md-4 col-sm-6">
-			  <img src="./images/Flag-Afghanistan.jpg" class="card-img-top rounded" alt="...">
+			  <img src="https://restcountries.eu/data/afg.svg" class="card-img-top rounded" alt="...">
 			  <div class="card-body">
 			    <h4 class="card-title d-flex justify-content-center">Country Name</h5>
 			    <p class="card-text">Time Zones</p>
 			    <p>ISO Code</p>
 			    <p>Calling codes</p>
-			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal">
+			    <button id="0" type="button" class="btn btn-primary offset-10 forModal" data-toggle="modal" data-target="#exampleModal-2">
 			      Details
 			    </button>
 			  </div>
@@ -48,7 +48,7 @@
 			    <p class="card-text">Time Zones</p>
 			    <p>Country Code</p>
 			    <p>Calling code</p>
-			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal-2">
+			    <button id="2" type="button" class="btn btn-primary offset-10 forModal" data-toggle="modal" data-target="#exampleModal-2">
 			      Details
 			    </button>
 			  </div>
@@ -83,33 +83,13 @@
 
 	</section>
 
-
-	<!-- Modal - the script will have to generate a new modal everytime a deials button is clicked since it corresponds to a particualr country. Note: the consttants will have to be outside the loop -->
-	<section id="modal-section">
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Country Name  <img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		        Details regarding the country
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
+	<!-- <section id="modal-section">
 		<div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Country Name  <img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
+		        <h5 class="modal-title" id="exampleModalLabel">Country Name  
+		        	<img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -118,12 +98,12 @@
 		        Second Modal
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Got it</button>
 		      </div>
 		    </div>
 		  </div>
 		</div>
-	</section>
+	</section> -->
 	
 
 
