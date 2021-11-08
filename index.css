@@ -38,3 +38,11 @@ input {
   	align-self: center;
   }
 }
+
+.spinner-border {
+	margin-top: 100px;
+}
+
+.hide {
+	display: none;
+}

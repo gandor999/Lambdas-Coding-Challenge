@@ -1,5 +1,14 @@
 console.log('Hello');
 
+// Spinner
+let spinner = document.querySelector('#spinner');
+
+setTimeout(() => {
+	spinner.parentElement.removeChild(spinner);
+	document.querySelector('#search').classList.remove('hide');
+}, 3000)
+
+
 // Get data from database
 
 let data = '';
@@ -15,10 +24,9 @@ getData();
 
 
 
-
 setTimeout(() => {
 	console.log(data);
-}, 1000);
+}, 3000);
 
 
 // Begin loading cards and images
@@ -163,7 +171,7 @@ setTimeout(() => {
 
 	
 
-}, 1000);
+}, 3000);
 
 
 
