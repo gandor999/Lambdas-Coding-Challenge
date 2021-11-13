@@ -21,7 +21,7 @@ input {
   	border: none;	
   }
 
-@media (min-width: 560px) {
+/*@media (min-width: 560px) {
   .card {
   	width: 400px;	
   }
@@ -37,7 +37,7 @@ input {
   .card {
   	align-self: center;
   }
-}
+}*/
 
 .spinner-border {
 	margin-top: 100px;

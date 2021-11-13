@@ -76,8 +76,8 @@ setTimeout(() => {
 
 
 		// Load countries
-		divRow.setAttribute('class', 'row');
-		divCol.setAttribute('class', 'card mt-5 col-md-4 col-sm-6');
+		divRow.setAttribute('class', 'row justify-content-center');
+		divCol.setAttribute('class', 'card mt-5 col-6 col-md-4');
 		divCardBody.setAttribute('class', 'card-body')
 
 		img.setAttribute('src', data[i].flag);
@@ -201,4 +201,45 @@ button1.addEventListener('click', e => {
 
 // Put code for filter here along with displaying everything
 
+function filter(){
+	let input, filter, titles, card;
 
+	let titlesUp = [];
+
+	    input = document.getElementById("search");
+
+	    filter = input.value.toUpperCase();
+
+	    console.log(filter);
+
+	    card = document.getElementsByClassName("card");
+
+	    titles = document.getElementsByClassName("card-title");
+
+	    console.log(titles);
+
+	    console.log(titles[0]);
+
+	    for(let i = 0; i < titles.length; ++i){
+	    	titlesUp.push(titles[i].innerHTML.toUpperCase());
+	    }
+
+	    console.log(titlesUp)
+
+	    console.log(titles[2])
+
+	    for(let i = 0; i < titles.length; ++i){
+
+	    	if(titlesUp[i].indexOf(filter) >= 0){
+	    		console.log(titlesUp[i].indexOf(filter));
+	    		card[i].style.display = "";
+	    	}
+	    	else{
+	    		card[i].style.display = "none";
+	    	}
+	    }
+
+	    
+
+	    
+}
