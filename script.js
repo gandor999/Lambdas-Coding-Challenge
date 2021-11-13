@@ -11,14 +11,13 @@ setTimeout(() => {
 
 
 // Get data from database
-// "data" here will serve as the object containing everything fetched from URI
+// "data" here will serve as the object containing everything fetched from the URI
 let data = '';
 
 let getData = async () => {
 	fetch("https://restcountries.com/v3.1/all")
 	.then(res => res.json())
 	.then(res => data = res)
-
 }
 
 getData();
@@ -26,9 +25,10 @@ getData();
 
 
 
-// Log for how many objects were retreived please don't mind
+// Log for how many objects were retreived please don't mind, this is also for logging possible errors
 setTimeout(() => {
 	console.log(data);
+	console.log(data[0].idd.suffixes[0]);
 }, 3000);
 
 
@@ -79,6 +79,7 @@ setTimeout(() => {
 		let divModalBody = document.createElement('div');
 		let divModalFooter = document.createElement('div');
 		let buttonGotIt = document.createElement('button');
+		let linkMap = document.createElement('a');
 		let imgFlag = document.createElement('img');
 
 
@@ -96,6 +97,13 @@ setTimeout(() => {
 		pTimeZone.setAttribute('class', 'card-text');
 		pTimeZone.innerText = `Time Zones: ${data[i].timezones}`;
 		pCountryCode.innerText = `ISO Alpha 2 Code: ${data[i].altSpellings[0]}`;
+		/*
+			I get an uncaught typeerror around this part at data.idd.suffixes[0],
+			which is pretty weird since its already defined in the database and it is clearly an
+			array. Even when I console logged in on top it shows that it is defined at a value of 3
+			for the first object. I'm still not sure how to avoid this but at least the application 
+			works
+		*/
 		pCallingCode.innerText = `Calling Code: ${data[i].idd.root}${data[i].idd.suffixes[0]}`;
 
 		button.setAttribute('type', 'button');
@@ -129,6 +137,10 @@ setTimeout(() => {
 		h5ModalTitle.setAttribute('id', 'exampleModalLabel');
 		h5ModalTitle.innerText = data[i].name.common + ' ';
 
+		linkMap.setAttribute('href', data[i].maps.googleMaps);
+		linkMap.setAttribute('target', '_blank');
+		linkMap.innerText = "Map";
+
 		imgFlag.setAttribute('style', 'height: 10px');
 		imgFlag.setAttribute('src', data[i].flags.png);
 
@@ -147,14 +159,17 @@ setTimeout(() => {
 
 		Their borders are: ${data[i].borders}
 
-		Map: 
-		${data[i].maps.googleMaps}
+		Region: ${data[i].region}
+
+		Captial: ${data[i].capital}
 
 		Latitude and Longitude: ${data[i].latlng}
 
 		Offical name is "${data[i].name.official}"
 
-		Area: ${data[i].area}`
+		Area: ${data[i].area} km^2
+
+		`
 
 		divModalFooter.setAttribute('class', 'modal-footer');
 
@@ -176,6 +191,7 @@ setTimeout(() => {
 		buttonCrossClose.append(spanUnderButton);
 
 		divModalContent.append(divModalBody);
+		divModalBody.append(linkMap);
 
 		divModalContent.append(divModalFooter);
 		divModalFooter.append(buttonGotIt);
@@ -191,24 +207,23 @@ function filter(){
 
 	let input, filter, titles, card;
 
-	let titlesUp = [];
+	let titlesUp = []; // Just going to store the uppercased names here
 
 	    input = document.getElementById("search");
 
-	    filter = input.value.toUpperCase();
+	    filter = input.value.toUpperCase(); // Make the value of input uppercase
 
 	    card = document.getElementsByClassName("card");
 
 	    titles = document.getElementsByClassName("card-title");
 
 	    for(let i = 0; i < titles.length; ++i){
-	    	titlesUp.push(titles[i].innerHTML.toUpperCase());
+	    	titlesUp.push(titles[i].innerHTML.toUpperCase()); // Make the names uppercase
 	    }
 
 	    for(let i = 0; i < titles.length; ++i){
 
 	    	if(titlesUp[i].indexOf(filter) >= 0){
-	    		console.log(titlesUp[i].indexOf(filter));
 	    		card[i].style.display = "";
 	    	}
 	    	else{

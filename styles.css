@@ -30,24 +30,7 @@ input {
 
 .card {
   	border: none;	
+  	padding: 30px;
   }
-
-/*@media (min-width: 560px) {
-  .card {
-  	width: 400px;	
-  }
-}
-
-@media (min-width: 985px) {
-  .card {
-  	align-self: center;
-  }
-}
-
-@media (min-width: 558px) {
-  .card {
-  	align-self: center;
-  }
-}*/
 
 
