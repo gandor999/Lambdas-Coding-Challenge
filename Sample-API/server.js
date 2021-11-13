@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 // All users routes
-app.use("/countries", countryRoutes);
+app.use("/v3.1", countryRoutes);
 
 
 // Listening to port

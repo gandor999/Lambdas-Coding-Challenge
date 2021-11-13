@@ -1,20 +1,21 @@
-console.log('Hello');
-
-// Spinner
+// Code for loading screen
 let spinner = document.querySelector('#spinner');
 
+// Let's set to 3 seconds for allowance on loading for "data"
 setTimeout(() => {
 	spinner.parentElement.removeChild(spinner);
 	document.querySelector('#search').classList.remove('hide');
 }, 3000)
 
 
-// Get data from database
 
+
+// Get data from database
+// "data" here will serve as the object containing everything fetched from URI
 let data = '';
 
 let getData = async () => {
-	fetch("http://localhost:4000/countries/")
+	fetch("https://restcountries.com/v3.1/all")
 	.then(res => res.json())
 	.then(res => data = res)
 
@@ -24,9 +25,13 @@ getData();
 
 
 
+
+// Log for how many objects were retreived please don't mind
 setTimeout(() => {
 	console.log(data);
 }, 3000);
+
+
 
 
 // Begin loading cards and images
@@ -46,12 +51,14 @@ body.append(sectionModal);
 sectionContent.append(divRow);
 
 
-// Load for flags section and modals
+
+
+// Load for cards section and corresponding modals
 setTimeout(() => {
 
 	for(let i = 0; i < data.length; ++i){
 
-		// Flag section initilization
+		// Cards section initilization
 		let divCol = document.createElement('div');
 		let divCardBody = document.createElement('div');
 		let h4Title = document.createElement('h4');
@@ -80,19 +87,19 @@ setTimeout(() => {
 		divCol.setAttribute('class', 'card mt-5 col-6 col-md-4');
 		divCardBody.setAttribute('class', 'card-body')
 
-		img.setAttribute('src', data[i].flag);
+		img.setAttribute('src', data[i].flags.png);
 		img.setAttribute('class', 'card-img-top rounded');
 
 		h4Title.setAttribute('class', 'card-title d-flex justify-content-center');
-		h4Title.innerText = data[i].name;
+		h4Title.innerText = data[i].name.common;
 
 		pTimeZone.setAttribute('class', 'card-text');
 		pTimeZone.innerText = `Time Zones: ${data[i].timezones}`;
-		pCountryCode.innerText = `ISO Code: ${data[i].alpha2Code}`;
-		pCallingCode.innerText = `Calling Codes: ${data[i].callingCodes}`;
+		pCountryCode.innerText = `ISO Alpha 2 Code: ${data[i].altSpellings[0]}`;
+		pCallingCode.innerText = `Calling Code: ${data[i].idd.root}${data[i].idd.suffixes[0]}`;
 
 		button.setAttribute('type', 'button');
-		button.setAttribute('class', 'btn btn-primary offset-10');
+		button.setAttribute('class', 'btn btn-primary');
 		button.setAttribute('data-toggle', 'modal');
 		button.setAttribute('data-target', `#modal-${i}`);
 		button.innerText = 'Details';
@@ -120,10 +127,10 @@ setTimeout(() => {
 		divModalHeader.setAttribute('class', 'modal-header');
 		h5ModalTitle.setAttribute('class', 'modal-title');
 		h5ModalTitle.setAttribute('id', 'exampleModalLabel');
-		h5ModalTitle.innerText = data[i].name + ' ';
+		h5ModalTitle.innerText = data[i].name.common + ' ';
 
 		imgFlag.setAttribute('style', 'height: 10px');
-		imgFlag.setAttribute('src', data[i].flag);
+		imgFlag.setAttribute('src', data[i].flags.png);
 
 		buttonCrossClose.setAttribute('type', 'button');
 		buttonCrossClose.setAttribute('class', 'close');
@@ -135,13 +142,18 @@ setTimeout(() => {
 
 		divModalBody.setAttribute('class', 'modal-body');
 		divModalBody.innerText = `Time Zones: ${data[i].timezones}
-		ISO Code: ${data[i].alpha2Code}
-		Calling Codes: ${data[i].callingCodes}
+		ISO Alpha2 Code: ${data[i].altSpellings[0]}
+		Calling Code: ${data[i].idd.root}${data[i].idd.suffixes[0]}
 
 		Their borders are: ${data[i].borders}
-		Demonym: ${data[i].demonym}
+
+		Map: 
+		${data[i].maps.googleMaps}
+
 		Latitude and Longitude: ${data[i].latlng}
-		Native name is ${data[i].nativeName}
+
+		Offical name is "${data[i].name.official}"
+
 		Area: ${data[i].area}`
 
 		divModalFooter.setAttribute('class', 'modal-footer');
@@ -168,40 +180,15 @@ setTimeout(() => {
 		divModalContent.append(divModalFooter);
 		divModalFooter.append(buttonGotIt);
 	}
-
-	
-
 }, 3000);
 
 
 
-/*const button1 = document.querySelector('#button1');
 
-button1.addEventListener('click', e => {
-	console.log(data[0]._id);
-
-	const div = document.createElement('div');
-	const body = document.body;
-	const p = document.createElement('p')
-
-	div.setAttribute('id', 'div-1')
-	p.setAttribute('id', 'p-1')
-	p.setAttribute('class', 'bg-primary')
-	p.innerText = data[0]._id;
-
-	body.append(div)
-	div.append(p)
-
-});*/
-
-
-
-
-
-
-// Put code for filter here along with displaying everything
+// Code for filter here
 
 function filter(){
+
 	let input, filter, titles, card;
 
 	let titlesUp = [];
@@ -210,23 +197,13 @@ function filter(){
 
 	    filter = input.value.toUpperCase();
 
-	    console.log(filter);
-
 	    card = document.getElementsByClassName("card");
 
 	    titles = document.getElementsByClassName("card-title");
 
-	    console.log(titles);
-
-	    console.log(titles[0]);
-
 	    for(let i = 0; i < titles.length; ++i){
 	    	titlesUp.push(titles[i].innerHTML.toUpperCase());
 	    }
-
-	    console.log(titlesUp)
-
-	    console.log(titles[2])
 
 	    for(let i = 0; i < titles.length; ++i){
 
@@ -238,8 +215,4 @@ function filter(){
 	    		card[i].style.display = "none";
 	    	}
 	    }
-
-	    
-
-	    
 }

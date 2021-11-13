@@ -4,119 +4,36 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="index.css">
+    	<!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 	<title>Countries</title>
 </head>
 <body>
 
-	<!-- <header class="container-fluid d-flex flex-column align-items-center justify-content-center">
-		<div id="container1" class="d-flex flex-column">
-			<p id="para1" class="bg-primary d-flex align-items-center justify-content-center">Hello Word</p>
-			<button id="button1" class="bg-primary d-flex align-items-center justify-content-center">Click here</button>
-		</div>
-	</header> -->
-
-
-
+		<!-- Skeleton for filter -->
 	<section id="search-section" class="d-flex align-items-center justify-content-center mt-5 hide">
 		<div>
 			<input onkeyup="filter()" id="search" class="container-fluid hide" placeholder="Filter" type="text" name="">
 		</div>
 	</section>
 
+
+		<!-- Skeleton for spinner -->
 	<div id="spinner" class="d-flex justify-content-center ">
 	  <div class="spinner-border" role="status">
 	    <span class="sr-only">Loading...</span>
 	  </div>
 	</div>
 
-	<!-- <section id="content-section" class="container-fluid d-flex justify-content-around justify-content-center mt-5">
-		<div class="row">
-			<div class="card mt-5 col-md-4 col-sm-6">
-			  <img src="./images/Flag-Afghanistan.jpg" class="card-img-top rounded" alt="...">
-			  <div class="card-body">
-			    <h4 class="card-title d-flex justify-content-center">Country Name</h5>
-			    <p class="card-text">Time Zones</p>
-			    <p>ISO Code</p>
-			    <p>Calling codes</p>
-			    <button id="0" type="button" class="btn btn-primary offset-10 forModal" data-toggle="modal" data-target="#exampleModal-2">
-			      Details
-			    </button>
-			  </div>
-			</div>
 
-			<div class="card mt-5 col-md-4 col-sm-6">
-			  <img src="./images/Philippines.jpg" class="card-img-top rounded" alt="...">
-			  <div class="card-body">
-			    <h4 class="card-title d-flex justify-content-center">Country Name</h5>
-			    <p class="card-text">Time Zones</p>
-			    <p>Country Code</p>
-			    <p>Calling code</p>
-			    <button id="2" type="button" class="btn btn-primary offset-10 forModal" data-toggle="modal" data-target="#exampleModal-2">
-			      Details
-			    </button>
-			  </div>
-			</div>
-
-			<div class="card mt-5 col-md-4 col-sm-6">
-			  <img src="./images/USA.jpg" class="card-img-top rounded" alt="...">
-			  <div class="card-body">
-			    <h4 class="card-title d-flex justify-content-center">Country Name</h5>
-			    <p class="card-text">Time Zones</p>
-			    <p>Country Code</p>
-			    <p>Calling code</p>
-			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal">
-			      Details
-			    </button>
-			  </div>
-			</div>
-
-			<div class="card mt-5 col-md-4 col-sm-6">
-			  <img src="./images/Flag-Afghanistan.jpg" class="card-img-top rounded" alt="...">
-			  <div class="card-body">
-			    <h4 class="card-title d-flex justify-content-center">Country Name</h5>
-			    <p class="card-text">Time Zones</p>
-			    <p>Country Code</p>
-			    <p>Calling code</p>
-			    <button type="button" class="btn btn-primary offset-10" data-toggle="modal" data-target="#exampleModal">
-			      Details
-			    </button>
-			  </div>
-			</div>
-		</div>	
-
-	</section> -->
-
-	<!-- <section id="modal-section">
-		<div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Country Name  
-		        	<img style="height: 10px" src="./images/Flag-Afghanistan.jpg"></h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		        Second Modal
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-primary" data-dismiss="modal">Got it</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</section> -->
-	
-
-
-
+		<!-- My JS script -->
 	<script type="text/javascript" src="script.js"></script>
+
+		<!-- Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
